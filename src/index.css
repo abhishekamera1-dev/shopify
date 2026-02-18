@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-hover-base {
+    @apply relative overflow-hidden transition-all duration-500 ease-out z-10;
+    background-size: 200% 100%;
+    background-position: right bottom;
+  }
+
+  .btn-hover-base:hover {
+    background-position: left bottom;
+  }
+
+  .btn-hover-dark {
+    @apply btn-hover-base text-white border border-[#1c1c1c];
+    background-image: linear-gradient(to right, transparent 50%, #1c1c1c 50%);
+  }
+
+  .btn-hover-dark:hover {
+    @apply text-[#1c1c1c];
+  }
+
+  .btn-hover-white {
+    @apply btn-hover-base text-black border border-transparent;
+    background-image: linear-gradient(to right, transparent 50%, white 50%);
+  }
+
+  .btn-hover-white:hover {
+    @apply text-white border-white;
+  }
+
+  .btn-hover-black-hero {
+    @apply btn-hover-base text-white border border-transparent;
+    background-image: linear-gradient(to right, transparent 50%, black 50%);
+  }
+
+  .btn-hover-black-hero:hover {
+    @apply text-white border-white;
+  }
+}
+
+@layer utilities {
+  .pause {
+    animation-play-state: paused;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 30s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scroll-right 30s linear infinite;
+}
