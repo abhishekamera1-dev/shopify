@@ -70,7 +70,7 @@ const Newsletter = () => {
                                 </div>
                                 <button
                                     type="submit"
-                                    className="btn-hover-white px-20 text-[10px] md:text-[11px] uppercase tracking-[0.3em] font-light whitespace-nowrap"
+                                    className="btn-hover-white px-16 text-[10px] md:text-[11px] uppercase tracking-[0.3em] font-light whitespace-nowrap"
                                     style={{ height: '55px' }}
                                 >
                                     Subscribe
