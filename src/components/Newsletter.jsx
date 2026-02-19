@@ -58,18 +58,20 @@ const Newsletter = () => {
                         </p>
 
                         <form className="w-full max-w-[1200px] mx-auto">
-                            <div className="flex flex-col md:flex-row gap-4 md:gap-4 items-stretch">
-                                <div className="flex-1 border border-white/60 bg-transparent">
+                            <div className="flex flex-col md:flex-row gap-4 items-stretch">
+                                <div className="flex-1">
                                     <input
                                         type="email"
                                         placeholder="E-mail"
-                                        className="w-full bg-transparent text-white px-6 py-4 md:py-4 outline-none placeholder:text-white/40 text-[11px] tracking-[0.2em] font-light"
+                                        className="w-full bg-transparent text-white px-6 py-[18.5px] border border-white/60 outline-none placeholder:text-white/40 text-[11px] tracking-[0.2em] font-light"
+                                        style={{ height: '55px' }}
                                         required
                                     />
                                 </div>
                                 <button
                                     type="submit"
-                                    className="btn-hover-white px-12 py-4 text-[10px] md:text-[11px] uppercase tracking-[0.3em] font-light whitespace-nowrap"
+                                    className="btn-hover-white px-20 text-[10px] md:text-[11px] uppercase tracking-[0.3em] font-light whitespace-nowrap"
+                                    style={{ height: '55px' }}
                                 >
                                     Subscribe
                                 </button>
