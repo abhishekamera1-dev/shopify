@@ -33,7 +33,7 @@ const WeekendCollection = () => {
     ];
 
     return (
-        <section className="bg-[#EFEFEF] text-[#1c1c1c] w-full pb-20 md:pb-28">
+        <section className="bg-[#EFEFEF] text-[#1c1c1c] w-full py-32 pb-20 md:pb-28">
             <div className="max-w-[1600px] mx-auto">
 
                 {/* Header */}
@@ -78,7 +78,7 @@ const WeekendCollection = () => {
                             </div>
 
                             {/* Image */}
-                            <div className="relative w-full max-w-[260px] md:max-w-[300px] lg:max-w-[320px] aspect-[1/0.9] overflow-hidden mb-8 md:mb-10">
+                            <div className="relative w-full max-w-[280px] md:max-w-[320px] lg:max-w-[400px] aspect-[1/0.9] overflow-hidden mb-8 md:mb-10">
 
                                 {/* Mobile Badge (top right only on small screens) */}
                                 {product.badge && (
@@ -90,7 +90,7 @@ const WeekendCollection = () => {
                                 )}
 
                                 <img
-                                    src={product.image}
+                                    src={product.image}  
                                     alt={product.title}
                                     className="w-full h-full object-contain transition-transform duration-700 ease-out hover:scale-105"
                                 />

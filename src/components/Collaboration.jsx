@@ -3,7 +3,7 @@ import React from 'react';
 const Collaboration = () => {
     return (
         <section className="py-16 md:py-24 bg-[#EFEFEF]">
-            <div className="container mx-auto px-0 md:px-16 lg:px-32 max-w-7xl">
+            <div className="max-w-[1500px] ml-0 px-0 md:px-16 lg:pl-28 lg:pr-36">
                 <div className="grid grid-cols-1 lg:grid-cols-[375px_1fr] gap-12 lg:gap-32 items-center">
                     {/* Left: Content */}
                     <div className="prose max-w-none order-2 lg:order-1 px-6 md:px-0">

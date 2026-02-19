@@ -57,22 +57,23 @@ const MaterialsAndTestimonials = () => {
             </section>
 
             {/* Testimonials Section */}
-            <section className="bg-[#1c1c1c] py-10 md:py-16">
-                <div className="container mx-auto px-10 md:px-24 lg:px-80 max-w-7xl text-center">
-                    {/* Active Testimonial Quote */}
-                    <div className="min-h-[100px] md:min-h-[120px] flex items-center justify-center mb-16">
+            <section className="bg-[#1c1c1c] py-10 md:py-28">
+                <div className="mx-auto max-w-3xl px-10 text-center">
+
+                    <div className="min-h-[120px] flex items-center justify-center mb-16">
                         <div
                             key={activeIndex}
-                            className="animate-in fade-in slide-in-from-bottom-2 duration-700"
+                            className="max-w-lg mx-auto animate-in fade-in slide-in-from-bottom-2 duration-700"
                         >
-                            <p className="text-[18px] md:text-[22px] font-light  text-white/90 leading-relaxed tracking-tight">
+                            <p className="text-[20px] md:text-[22px] font-light text-white/90 leading-relaxed">
                                 {testimonials[activeIndex].quote}
                             </p>
                         </div>
                     </div>
 
+
                     {/* Logo Navigation Grid */}
-                    <div className="flex justify-center items-center gap-10 md:gap-20">
+                    <div className="flex justify-center items-center gap-10 md:gap-24">
                         {testimonials.map((testimonial, index) => (
                             <button
                                 key={index}

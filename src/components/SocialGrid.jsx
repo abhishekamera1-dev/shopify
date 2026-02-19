@@ -11,10 +11,10 @@ const socialImages = [
 const services = [
     {
         icon: (
-            <svg className="w-8 h-8 text-[#1c1c1c]/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-                <path d="M21 8V21H3V8" />
-                <path d="M1 3H23V8H1V3Z" />
-                <path d="M10 12H14" />
+            <svg aria-hidden="true" focusable="false" fill="none" strokeWidth="1" width="24" className="w-8 h-8 text-[#1c1c1c]/70" viewBox="0 0 24 24">
+                <path clipRule="evenodd" d="M.75 5.25 12 9.75l11.25-4.5L12 .75.75 5.25Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                <path clipRule="evenodd" d="M.75 5.25v13.5L12 23.25V9.75L.75 5.25v0Zm22.5 0v13.5L12 23.25V9.75l11.25-4.5v0Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                <path d="m18.187 7.275-11.25-4.5M20.625 16.5l-1.875.75" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
             </svg>
         ),
         title: "Express Delivery",
@@ -22,9 +22,9 @@ const services = [
     },
     {
         icon: (
-            <svg className="w-8 h-8 text-[#1c1c1c]/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                <polyline points="22,6 12,13 2,6" />
+            <svg aria-hidden="true" focusable="false" fill="none" strokeWidth="1" width="24" className="w-8 h-8 text-[#1c1c1c]/70" viewBox="0 0 24 24">
+                <path d="m1.25 15.08 2.207-3.384 3.385 2.206" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                <path d="M13.13 2.5a9.525 9.525 0 1 1 0 19.049 9.68 9.68 0 0 1-9.673-9.853" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
             </svg>
         ),
         title: "Free Returns",
@@ -32,8 +32,9 @@ const services = [
     },
     {
         icon: (
-            <svg className="w-8 h-8 text-[#1c1c1c]/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            <svg aria-hidden="true" focusable="false" fill="none" strokeWidth="1" width="24" className="w-8 h-8 text-[#1c1c1c]/70" viewBox="0 0 24 24">
+                <path clipRule="evenodd" d="M11.25 18.75a1.5 1.5 0 0 1-1.5-1.5v-7.5a1.5 1.5 0 0 1 1.5-1.5h10.5a1.5 1.5 0 0 1 1.5 1.5v7.5a1.5 1.5 0 0 1-1.5 1.5h-1.5v4.5l-4.5-4.5h-4.5Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                <path d="m6.75 12.75-3 3v-4.5h-1.5a1.5 1.5 0 0 1-1.5-1.5v-7.5a1.5 1.5 0 0 1 1.5-1.5h10.5a1.5 1.5 0 0 1 1.5 1.5v3" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
             </svg>
         ),
         title: "Available Customer Service",
@@ -41,9 +42,9 @@ const services = [
     },
     {
         icon: (
-            <svg className="w-8 h-8 text-[#1c1c1c]/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-                <rect x="2" y="5" width="20" height="14" rx="2" />
-                <path d="M2 10h20" />
+            <svg aria-hidden="true" focusable="false" fill="none" strokeWidth="1" width="24" className="w-8 h-8 text-[#1c1c1c]/70" viewBox="0 0 24 24">
+                <path clipRule="evenodd" d="M.75 5.25a1.5 1.5 0 0 1 1.5-1.5h19.5a1.5 1.5 0 0 1 1.5 1.5v13.5a1.5 1.5 0 0 1-1.5 1.5H2.25a1.5 1.5 0 0 1-1.5-1.5V5.25Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                <path d="M.75 8.25h22.5m-18 4.5h8.25m-8.25 3h5.25" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
             </svg>
         ),
         title: "Payment in 3x",
@@ -81,8 +82,8 @@ const SocialSection = () => {
                     <p className="text-[10px] uppercase tracking-[0.25em] font-normal text-[#1c1c1c]/80 mb-4">
                         Join us
                     </p>
-                    <h2 className="text-[24px] md:text-[32px] uppercase tracking-[0.2em] font-light text-[#1c1c1c]">
-                        @leoetviolette
+                    <h2 className="text-[24px] md:text-[26px] uppercase tracking-[0.2em] font-light text-[#1c1c1c]">
+                        @LEOETVIOLETTE
                     </h2>
                 </div>
 

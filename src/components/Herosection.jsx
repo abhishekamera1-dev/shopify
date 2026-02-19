@@ -17,7 +17,7 @@ const Herosection = () => {
         },
         {
             type: 'image',
-            src: '/Slideshow_-_Desktop_-_home.jpg',
+            src: 'https://prestige-theme-allure.myshopify.com/cdn/shop/files/NOVA-LZDVERT2.jpg?v=1682004041&width=3200',
             subtitle: 'LE SAC BAGUETTE',
             title: 'INSPIRED BY THE 90S',
             actions: [
@@ -26,7 +26,7 @@ const Herosection = () => {
         },
         {
             type: 'image',
-            src: '/hero 2.webp',
+            src: 'https://prestige-theme-allure.myshopify.com/cdn/shop/files/Slideshow_-_Desktop_-_home.jpg?v=1680794528&width=3200',
             subtitle: 'LE NOVA',
             title: 'ELEGANT & TIMELESS',
             bordered: true,

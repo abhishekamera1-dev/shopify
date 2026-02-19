@@ -3,10 +3,12 @@ import React from 'react'
 const Ouraimsection = () => {
     return (
         <section className="pt-16 pb-10 md:py-20 bg-[#EFEFEF]">
-            <div className="container mx-auto px-6 max-w-4xl text-center">
+            {/* <div className="container mx-auto px-6 max-w-4xl text-center"> */}
+            <div className="max-w-[800px] mx-auto px-6 text-center">
+
                 <div className="flex flex-col items-center gap-4">
                     {/* Line Art Image */}
-                    <div className="w-full flex justify-center">
+                    <div className="w-full  flex justify-center items-center">
                         <img
                             src="https://prestige-theme-allure.myshopify.com/cdn/shop/files/bag-240px.jpg?v=1683010834&width=240"
                             alt="Bag Icon"

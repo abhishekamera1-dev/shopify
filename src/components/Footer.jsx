@@ -6,10 +6,10 @@ const Footer = () => {
             <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
 
                 {/* Main Footer Content */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-16 mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16 mb-6">
 
                     {/* Newsletter */}
-                    <div className="flex flex-col gap-6">
+                    <div className="flex flex-col gap-6 max-w-[420px] -ml-8">
                         <h4 className="text-[11px] uppercase tracking-[0.2em] font-semibold text-[#1c1c1c]">
                             NEWSLETTER
                         </h4>
@@ -70,7 +70,7 @@ const Footer = () => {
                     </div>
 
                     {/* Shop */}
-                    <div className="flex flex-col gap-6">
+                    <div className="flex flex-col gap-6 max-w-[420px] pl-20">
                         <h4 className="text-[11px] uppercase tracking-[0.2em] font-semibold text-[#1c1c1c]">
                             SHOP
                         </h4>
@@ -83,7 +83,7 @@ const Footer = () => {
                     </div>
 
                     {/* Information */}
-                    <div className="flex flex-col gap-6">
+                    <div className="flex flex-col gap-6 max-w-[420px] pl-8">
                         <h4 className="text-[11px] uppercase tracking-[0.2em] font-semibold text-[#1c1c1c]">
                             INFORMATION
                         </h4>
@@ -97,16 +97,18 @@ const Footer = () => {
                     </div>
 
                     {/* About */}
-                    <div className="flex flex-col gap-6 max-w-[420px]">
+
+                    <div className="flex flex-col gap-1 max-w-[420px]">
                         <h4 className="text-[11px] uppercase tracking-[0.2em] font-semibold text-[#1c1c1c]">
                             ABOUT THE SHOP
                         </h4>
 
-                        <div className="flex flex-col gap-4">
-                            <p className="text-[13px] font-light text-[#1c1c1c]/70 leading-relaxed">
+                        <div className="flex flex-col gap-1">
+                            <p className="text-[13px] font-light text-[#1c1c1c]/70 leading-[1.6]">
                                 The story of Leo and Violette, it's ours. We are Léo Dominguez & Violette Polchi. Two Parisian lovers sharing our lives for more than 8 years. Since the early days of our meeting, we always had the dream to develop a project together. Here it is!
                             </p>
-                            <p className="text-[13px] font-light text-[#1c1c1c]/70 leading-relaxed">
+
+                            <p className="text-[13px] font-light text-[#1c1c1c]/70 leading-[1.6]">
                                 Thanks to <a href="#" className="underline underline-offset-4 decoration-1 decoration-[#1c1c1c]/20 hover:decoration-[#1c1c1c]/60 transition-all">Léo et Violette</a> for allowing us to use their products in this demo store.
                             </p>
                         </div>
@@ -117,9 +119,9 @@ const Footer = () => {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="pt-6 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div className="pt-10 ml-[-30px] flex flex-col  md:flex-row justify-between items-center gap-6">
 
-                    <div className="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.15em] font-medium text-[#1c1c1c]/60 cursor-pointer group">
+                    <div className="flex items-center gap-1.5  text-[12px] uppercase tracking-[0.15em] font-medium text-[rgb(28_28_28/47%)] cursor-pointer group">
                         <img src="https://flagcdn.com/us.svg" className="w-4 h-2.5 object-cover" alt="USA" />
                         <span>UNITED STATES (USD $)</span>
                         <svg className="w-2.5 h-2.5 opacity-40 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">

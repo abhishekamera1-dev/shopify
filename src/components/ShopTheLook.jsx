@@ -79,9 +79,11 @@ const ShopTheLook = () => {
                 <div className="hidden md:block relative">
                     {/* Left Arrow - Positioned outside with shadow */}
                     <button
-                        onClick={() => setCurrentSlide(prev => Math.max(0, prev - 1))}
-                        disabled={currentSlide === 0}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-8 w-12 h-12 rounded-full bg-white border border-black/10 flex items-center justify-center hover:border-black/30 transition-colors disabled:opacity-30 disabled:cursor-not-allowed z-10 shadow-md"
+                        onClick={() => {
+                            setCurrentSlide(prev => (prev === 0 ? looks.length - 1 : prev - 1));
+                            setActiveHotspot(0);
+                        }}
+                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-8 w-12 h-12 rounded-full bg-white border border-black/10 flex items-center justify-center hover:border-black/30 transition-colors z-10 shadow-md"
                     >
                         <svg width="16" height="16" viewBox="0 0 16 18" fill="none">
                             <path d="M11 1 3 9l8 8" stroke="currentColor" strokeLinecap="square" />
@@ -120,20 +122,20 @@ const ShopTheLook = () => {
                         </div>
 
                         {/* Right: Product Details - Refined to match reference */}
-                        <div className="flex flex-col items-start w-full relative pt-8 h-full text-left">
-                            {/* Badge - Fixed at the top left to match alignment with image top */}
-                            <div className="mb-16 w-full text-left">
-                                {currentProduct.badge && (
-                                    <span className="text-[10px] uppercase tracking-[0.2em] font-normal text-gray-400">
+                        <div className="flex flex-col items-start justify-center gap-0 w-full relative">
+                            {/* Badge - Positioned with absolute for precise control */}
+                            {currentProduct.badge && (
+                                <div className="absolute top-8 left-0 w-full">
+                                    <span className="text-[10px] uppercase tracking-[0.2em] font-normal text-[#1c1c1c]/50">
                                         {currentProduct.badge}
                                     </span>
-                                )}
-                            </div>
+                                </div>
+                            )}
 
-                            {/* Product Content - Positioned with top margin instead of center */}
-                            <div className="w-full flex flex-col items-center mt-4">
+                            {/* Product Content - Shifted to center/right */}
+                            <div className="w-full flex flex-col items-center pt-20">
                                 {/* Product Image - More compact with padding */}
-                                <div className="w-full max-w-[260px] mb-10">
+                                <div className="w-full max-w-[280px] mb-8">
                                     <div className="relative aspect-square overflow-hidden group">
                                         <img
                                             src={currentProduct.image}
@@ -183,9 +185,11 @@ const ShopTheLook = () => {
 
                     {/* Right Arrow - Positioned outside with shadow */}
                     <button
-                        onClick={() => setCurrentSlide(prev => Math.min(looks.length - 1, prev + 1))}
-                        disabled={currentSlide === looks.length - 1}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-8 w-12 h-12 rounded-full bg-white border border-black/10 flex items-center justify-center hover:border-black/30 transition-colors disabled:opacity-30 disabled:cursor-not-allowed z-10 shadow-md"
+                        onClick={() => {
+                            setCurrentSlide(prev => (prev === looks.length - 1 ? 0 : prev + 1));
+                            setActiveHotspot(0);
+                        }}
+                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-8 w-12 h-12 rounded-full bg-white border border-black/10 flex items-center justify-center hover:border-black/30 transition-colors z-10 shadow-md"
                     >
                         <svg width="16" height="16" viewBox="0 0 16 18" fill="none">
                             <path d="m5 17 8-8-8-8" stroke="currentColor" strokeLinecap="square" />

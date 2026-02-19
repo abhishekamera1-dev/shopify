@@ -34,7 +34,7 @@ const Title = () => {
     );
 
     return (
-        <section className="py-20 bg-[#EFEFEF] overflow-hidden w-full">
+        <section className="pt-[5rem] bg-[#EFEFEF] overflow-hidden w-full">
             {/* Row 1: Scrolling Left */}
             <div className={`relative flex overflow-hidden w-full border-t-2 border-b ${borderClass}`}>
                 {/* Track 1 */}
