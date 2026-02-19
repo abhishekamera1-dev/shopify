@@ -195,7 +195,7 @@ const Footer = () => {
                             <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" className="max-h-full max-w-full" />
                         </div>
                         <div className="h-6 w-10 border border-[#1c1c1c]/5 rounded-[2px] flex items-center justify-center p-1 bg-white">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/archive/f/fa/20190328201103%21American_Express_logo_%282018%29.svg" alt="PayPal" className="max-h-full max-w-full" />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/American_Express_Square_Logo.png" alt="PayPal" className="max-h-full max-w-full" />
                         </div>
                         <div className="h-6 w-10 border border-[#1c1c1c]/5 rounded-[2px] flex items-center justify-center p-1 bg-white">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/PayPal_Logo_Icon_2014.svg/1280px-PayPal_Logo_Icon_2014.svg.png" alt="Amex" className="max-h-full max-w-full" />
