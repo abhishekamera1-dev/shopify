@@ -1,4 +1,4 @@
-// import Home from './Pages/Home.jsx'
+
 import Banner from './components/Banner'
 import Navbar from './components/Navbar'
 import Herosection from './components/Herosection'
