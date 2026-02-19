@@ -19,7 +19,7 @@ const ShopTheLook = () => {
                     price: "$450.00",
                     image: "https://prestige-theme-allure.myshopify.com/cdn/shop/products/Grand-Nova-Lisse-Ivoire-01_c5e43010-e4a3-4dac-97b1-5552659b9a73.jpg?v=1676886728&width=800",
                     secondaryImage: "https://prestige-theme-allure.myshopify.com/cdn/shop/products/Grand-Nova-Lisse-Ivoire-02_348ac141-50cb-4494-983f-723ee1be4298.jpg?v=1677153834&width=800",
-                    badge: "Best seller"
+                    badge: null
                 },
                 {
                     id: 2,

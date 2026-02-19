@@ -25,6 +25,7 @@ const VideoSection = () => {
                 loop
                 muted
                 playsInline
+                controls
                 onClick={togglePlay}
             >
                 <source

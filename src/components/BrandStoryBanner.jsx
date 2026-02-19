@@ -50,7 +50,7 @@ const BrandStoryBanner = () => {
                         <p className="text-[6px] md:text-[9px] uppercase tracking-[0.4em] font-light text-white/90 mb-2 md:mb-6">
                             The couple
                         </p>
-                        <h2 className="text-[20px] md:text-[42px] lg:text-[36px] uppercase tracking-[0.2em] font-light text-white mb-4 md:mb-8 leading-tight">
+                        <h2 className="text-[20px] md:text-[20px] lg:text-[22px] uppercase tracking-[0.2em] font-light text-white mb-4 md:mb-8 leading-tight">
                             Léo et violette
                         </h2>
                         <div className="text-[11px] md:text-[12px] font-extralight text-white/95 leading-relaxed tracking-wide space-y-2">
