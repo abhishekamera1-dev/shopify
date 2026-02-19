@@ -1,11 +1,46 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 const Banner = () => {
+    const [timeLeft, setTimeLeft] = useState({
+        days: 99,
+        hours: 19,
+        minutes: 52,
+        seconds: 16
+    });
+
+    useEffect(() => {
+        // Set a target date 100 days from "now" for demonstration
+        // In a real app, this would be a fixed date like '2024-12-31T23:59:59'
+        const targetDate = new Date();
+        targetDate.setDate(targetDate.getDate() + 100);
+
+        const timer = setInterval(() => {
+            const now = new Date();
+            const difference = targetDate.getTime() - now.getTime();
+
+            if (difference <= 0) {
+                clearInterval(timer);
+                setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+            } else {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                setTimeLeft({ days, hours, minutes, seconds });
+            }
+        }, 1000);
+
+        return () => clearInterval(timer);
+    }, []);
+
+    const formatNumber = (num) => String(num).padStart(2, '0');
+
     return (
         <div className="bg-[#1c1c1c] text-white h-[44px] md:h-[68px] px-4 md:px-12 flex flex-row items-center justify-center md:justify-between gap-4 md:gap-0 font-sans uppercase">
-            {/* Left side: Sale text and Shop link - Hidden on very small screens or tightened */}
+            {/* Left side: Sale text and Shop link */}
             <div className="flex items-center gap-3 md:gap-6">
-                <span className="text-[10px] md:text-[12px] tracking-[0.1em] md:tracking-[0.18em] font-light">
+                <span className="text-[10px] md:text-[12px] tracking-[0.15em] md:tracking-[0.18em] font-light">
                     Super Sale Up to 40% Off
                 </span>
                 <a
@@ -20,7 +55,7 @@ const Banner = () => {
             <div className="flex items-center gap-4 md:gap-8 border-l border-white/10 md:border-none pl-4 md:pl-0">
                 <div className="flex items-center gap-1.5 md:gap-3">
                     <div className="flex flex-col items-center">
-                        <div className="text-[12px] md:text-[15px] font-medium leading-none tracking-tight">99</div>
+                        <div className="text-[12px] md:text-[15px] font-medium leading-none tracking-tight">{formatNumber(timeLeft.days)}</div>
                         <div className="text-[7px] md:text-[9px] mt-0.5 text-gray-400 font-bold tracking-[0.1em] md:tracking-[0.15em]">Day</div>
                     </div>
                     <span className="text-[12px] md:text-[18px] font-light text-gray-500 pb-2.5 md:pb-4">:</span>
@@ -28,7 +63,7 @@ const Banner = () => {
 
                 <div className="flex items-center gap-1.5 md:gap-3">
                     <div className="flex flex-col items-center">
-                        <div className="text-[12px] md:text-[15px] font-medium leading-none tracking-tight">19</div>
+                        <div className="text-[12px] md:text-[15px] font-medium leading-none tracking-tight">{formatNumber(timeLeft.hours)}</div>
                         <div className="text-[7px] md:text-[9px] mt-0.5 text-gray-400 font-bold tracking-[0.1em] md:tracking-[0.15em]">Hrs</div>
                     </div>
                     <span className="text-[12px] md:text-[18px] font-light text-gray-500 pb-2.5 md:pb-4">:</span>
@@ -36,14 +71,14 @@ const Banner = () => {
 
                 <div className="flex items-center gap-1.5 md:gap-3">
                     <div className="flex flex-col items-center">
-                        <div className="text-[12px] md:text-[15px] font-medium leading-none tracking-tight">27</div>
+                        <div className="text-[12px] md:text-[15px] font-medium leading-none tracking-tight">{formatNumber(timeLeft.minutes)}</div>
                         <div className="text-[7px] md:text-[9px] mt-0.5 text-gray-400 font-bold tracking-[0.1em] md:tracking-[0.15em]">Min</div>
                     </div>
                     <span className="text-[12px] md:text-[18px] font-light text-gray-500 pb-2.5 md:pb-4">:</span>
                 </div>
 
                 <div className="flex flex-col items-center">
-                    <div className="text-[12px] md:text-[15px] font-medium leading-none tracking-tight">56</div>
+                    <div className="text-[12px] md:text-[15px] font-medium leading-none tracking-tight">{formatNumber(timeLeft.seconds)}</div>
                     <div className="text-[7px] md:text-[9px] mt-0.5 text-gray-400 font-bold tracking-[0.1em] md:tracking-[0.15em]">Sec</div>
                 </div>
             </div>
