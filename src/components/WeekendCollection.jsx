@@ -5,6 +5,7 @@ const WeekendCollection = () => {
         {
             id: 1,
             image: "https://prestige-theme-allure.myshopify.com/cdn/shop/products/Le-Compact-Weekender-Buffle-Noir-01_2c0fb581-2bd2-453e-a305-161fbfb97621.jpg?v=1676887330&width=800",
+            secondaryImage: "https://prestige-theme-allure.myshopify.com/cdn/shop/products/Le-Compact-Weekender-Buffle-Noir-02_a0706e23-388d-4072-ab04-c15e247e3323.jpg?v=1677259432&width=1800",
             title: "Le Compact Weekender Buffalo Black",
             price: "$470.00",
             badge: ""
@@ -12,6 +13,7 @@ const WeekendCollection = () => {
         {
             id: 2,
             image: "https://prestige-theme-allure.myshopify.com/cdn/shop/products/Weekender-Graine-Noir-01_30f52b96-4635-4e78-a3aa-cfc6d4cfbc42.jpg?v=1676887357&width=800",
+            secondaryImage: "https://prestige-theme-allure.myshopify.com/cdn/shop/products/Weekender-Graine-Noir-03_c4c1cb18-c139-4fab-b283-1c00b22babfc.jpg?v=1677259382&width=1600",
             title: "Le Compact Weekender Black Pebbled Leather",
             price: "$470.00",
             badge: "Best seller"
@@ -19,6 +21,7 @@ const WeekendCollection = () => {
         {
             id: 3,
             image: "https://prestige-theme-allure.myshopify.com/cdn/shop/products/Weekender-Graine-Bleu-01_3ce2f9ae-8483-4136-9cf1-1c5bcb832718.jpg?v=1676887344&width=800",
+            secondaryImage: "https://prestige-theme-allure.myshopify.com/cdn/shop/products/Weekender-Graine-Bleu-03_eb9dd61f-40f8-4d5c-a216-f6f52aef816e.jpg?v=1677259405&width=1600",
             title: "Le Compact Weekender Blue Pebbled Leather",
             price: "$470.00",
             badge: ""
@@ -26,6 +29,7 @@ const WeekendCollection = () => {
         {
             id: 4,
             image: "https://prestige-theme-allure.myshopify.com/cdn/shop/products/Le-Compact-Weekender-Buffle-Brun-01_4f3c8d5a-25d3-4b3c-b5cf-f587983da039.jpg?v=1676887315&width=800",
+            secondaryImage: "https://prestige-theme-allure.myshopify.com/cdn/shop/products/Le-Compact-Weekender-Buffle-Brun-02_cb83be45-fb02-4399-8460-4f583902e185.jpg?v=1677259450&width=1600",
             title: "Le Compact Weekender Buffalo Brown",
             price: "$470.00",
             badge: ""
@@ -78,25 +82,35 @@ const WeekendCollection = () => {
                             </div>
 
                             {/* Image */}
-                            <div className="relative w-full max-w-[280px] md:max-w-[320px] lg:max-w-[400px] aspect-[1/0.9] overflow-hidden mb-8 md:mb-10">
+                            <div className="relative w-full max-w-[280px] md:max-w-[320px] lg:max-w-[400px] aspect-[1/0.9] overflow-hidden mb-8 md:mb-10 group/item">
 
                                 {/* Mobile Badge (top right only on small screens) */}
                                 {product.badge && (
-                                    <div className="absolute top-0 right-0 p-3 md:hidden">
+                                    <div className="absolute top-0 right-0 p-3 md:hidden z-20">
                                         <span className="text-[10px] uppercase tracking-[0.2em] text-[#1c1c1c]/60">
                                             {product.badge}
                                         </span>
                                     </div>
                                 )}
 
+                                {/* Primary Image */}
                                 <img
-                                    src={product.image}  
+                                    src={product.image}
                                     alt={product.title}
-                                    className="w-full h-full object-contain transition-transform duration-700 ease-out hover:scale-105"
+                                    className="w-full h-full object-contain transition-all duration-700 ease-in-out group-hover/item:opacity-0 group-hover/item:scale-105"
                                 />
 
+                                {/* Secondary Image (Fade in on hover) */}
+                                {product.secondaryImage && (
+                                    <img
+                                        src={product.secondaryImage}
+                                        alt={`${product.title} - Alternate View`}
+                                        className="absolute inset-0 w-full h-full object-contain opacity-0 transition-all duration-700 ease-in-out group-hover/item:opacity-100 group-hover/item:scale-105"
+                                    />
+                                )}
+
                                 {/* Quick Add */}
-                                <div className="absolute bottom-0 right-0 p-4">
+                                <div className="absolute bottom-0 right-0 p-4 z-20">
                                     <button className="w-8 h-8 md:w-10 md:h-10 shadow-sm flex items-center justify-center btn-hover-white">
                                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 4v16m8-8H4" />

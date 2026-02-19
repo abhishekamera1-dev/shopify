@@ -1,6 +1,34 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 const Footer = () => {
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const dropdownRef = useRef(null);
+
+    const regions = [
+        { name: "Canada", code: "CAD $", flag: "https://flagcdn.com/ca.svg" },
+        { name: "France", code: "EUR €", flag: "https://flagcdn.com/fr.svg" },
+        { name: "Germany", code: "EUR €", flag: "https://flagcdn.com/de.svg" },
+        { name: "Hong Kong SAR", code: "HKD $", flag: "https://flagcdn.com/hk.svg" },
+        { name: "Italy", code: "EUR €", flag: "https://flagcdn.com/it.svg" },
+        { name: "Japan", code: "JPY ¥", flag: "https://flagcdn.com/jp.svg" },
+        { name: "South Korea", code: "KRW ₩", flag: "https://flagcdn.com/kr.svg" },
+        { name: "Spain", code: "EUR €", flag: "https://flagcdn.com/es.svg" },
+        { name: "United Kingdom", code: "GBP £", flag: "https://flagcdn.com/gb.svg" },
+        { name: "United States", code: "USD $", flag: "https://flagcdn.com/us.svg" },
+    ];
+
+    const [selectedRegion, setSelectedRegion] = useState(regions[9]); // Default to US
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsDropdownOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
+
     return (
         <footer className="bg-white pt-20 pb-12 border-t border-[#1c1c1c]/5">
             <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
@@ -119,14 +147,40 @@ const Footer = () => {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="pt-10 ml-[-30px] flex flex-col  md:flex-row justify-between items-center gap-6">
+                <div className="pt-10 ml-[-30px] flex flex-col  md:flex-row justify-between items-center gap-6 relative">
 
-                    <div className="flex items-center gap-1.5  text-[12px] uppercase tracking-[0.15em] font-medium text-[rgb(28_28_28/47%)] cursor-pointer group">
-                        <img src="https://flagcdn.com/us.svg" className="w-4 h-2.5 object-cover" alt="USA" />
-                        <span>UNITED STATES (USD $)</span>
-                        <svg className="w-2.5 h-2.5 opacity-40 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                        </svg>
+                    <div className="relative" ref={dropdownRef}>
+                        <div
+                            className="flex items-center gap-1.5 text-[12px] uppercase tracking-[0.15em] font-medium text-[rgb(28_28_28/47%)] cursor-pointer group"
+                            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                        >
+                            <img src={selectedRegion.flag} className="w-4 h-2.5 object-cover" alt={selectedRegion.name} />
+                            <span>{selectedRegion.name} ({selectedRegion.code})</span>
+                            <svg className={`w-2.5 h-2.5 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180 opacity-100' : 'opacity-40 group-hover:opacity-100'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+
+                        {/* Dropdown Menu */}
+                        <div className={`absolute bottom-full left-0 mb-4 w-60 bg-white border border-[#1c1c1c]/5 shadow-xl transition-all duration-300 z-50 ${isDropdownOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 translate-y-4 invisible'}`}>
+                            <div className="py-2 max-h-[400px] overflow-y-auto">
+                                {regions.map((region, index) => (
+                                    <div
+                                        key={index}
+                                        className={`flex items-center gap-3 px-5 py-2.5 hover:bg-gray-50 cursor-pointer transition-colors ${selectedRegion.name === region.name ? 'bg-gray-50' : ''}`}
+                                        onClick={() => {
+                                            setSelectedRegion(region);
+                                            setIsDropdownOpen(false);
+                                        }}
+                                    >
+                                        <img src={region.flag} className="w-4 h-2.5 object-cover" alt={region.name} />
+                                        <span className="text-[13px] font-light text-[#1c1c1c]/70 tracking-wide">
+                                            {region.name} ({region.code})
+                                        </span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
 
                     <div className="text-[10px] uppercase tracking-[0.2em] font-light text-[#1c1c1c]/40 text-center">
@@ -141,16 +195,16 @@ const Footer = () => {
                             <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" className="max-h-full max-w-full" />
                         </div>
                         <div className="h-6 w-10 border border-[#1c1c1c]/5 rounded-[2px] flex items-center justify-center p-1 bg-white">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" className="max-h-full max-w-full" />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/archive/f/fa/20190328201103%21American_Express_logo_%282018%29.svg" alt="PayPal" className="max-h-full max-w-full" />
                         </div>
                         <div className="h-6 w-10 border border-[#1c1c1c]/5 rounded-[2px] flex items-center justify-center p-1 bg-white">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/American_Express_logo_%282018%29.svg" alt="Amex" className="max-h-full max-w-full" />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/PayPal_Logo_Icon_2014.svg/1280px-PayPal_Logo_Icon_2014.svg.png" alt="Amex" className="max-h-full max-w-full" />
                         </div>
                         <div className="h-6 w-10 border border-[#1c1c1c]/5 rounded-[2px] flex items-center justify-center p-1 bg-white">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Diners_Club_Logo3.svg" alt="Maestro" className="max-h-full max-w-full" />
+                            <img src="https://cdn.simpleicons.org/dinersclub" alt="Maestro" className="max-h-full max-w-full" />
                         </div>
                         <div className="h-6 w-10 border border-[#1c1c1c]/5 rounded-[2px] flex items-center justify-center p-1 bg-white">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Discover_Card_logo.svg/3840px-Discover_Card_logo.svg.png" alt="Discover" className="max-h-full max-w-full" />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Discover.png" alt="Discover" className="max-h-full max-w-full" />
                         </div>
                     </div>
 

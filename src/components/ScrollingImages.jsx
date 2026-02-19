@@ -88,7 +88,7 @@ const ScrollingImages = () => {
                                     <p className="text-[12px] tracking-[0.2em] uppercase font-extralight text-white/70 mb-5">
                                         {item.number}
                                     </p>
-                                    <h3 className="text-[15px] md:text-[20px] lg:text-[25px] tracking-[0.1em] uppercase font-extralight text-white mb-8 leading-tight">
+                                    <h3 className="text-[15px] md:text-[20px] lg:text-[20px] tracking-[0.1em] uppercase font-extralight text-white mb-8 leading-tight">
                                         {item.title}
                                     </h3>
                                     <p className="text-[14px] md:text-[15px] leading-[1.7] font-extralight text-white/85 mb-10 max-w-sm mx-auto">

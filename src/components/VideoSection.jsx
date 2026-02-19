@@ -25,8 +25,9 @@ const VideoSection = () => {
                 loop
                 muted
                 playsInline
+
+                // onClick={togglePlay}
                 controls
-                onClick={togglePlay}
             >
                 <source
                     src="//prestige-theme-allure.myshopify.com/cdn/shop/videos/c/vp/686fc38c1584488793cb47f95193f422/686fc38c1584488793cb47f95193f422.HD-1080p-4.8Mbps-12729205.mp4?v=0"

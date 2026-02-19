@@ -119,7 +119,7 @@ const Herosection = () => {
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-40">
                 <button
                     className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-50 transition-colors group"
-                    onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
+                    onClick={() => document.getElementById('bestseller')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                     <svg
                         className="w-5 h-5 text-black group-hover:translate-y-0.5 transition-transform"

@@ -119,7 +119,7 @@ const FeaturedProduct = () => {
                                 <div className="flex gap-4">
                                     {/* <div className="w-9 h-9 bg-[#a67c52] border border-black/5 cursor-pointer ring-1 ring-offset-4 ring-transparent hover:ring-black/10 transition-all active:scale-95" /> */}
                                     <div className="p-[3px] border border-black cursor-pointer">
-                                        <div className="w-9 h-9 bg-[#a67c52] border border-black/10"></div>
+                                        <div className="w-9 h-9 bg-[#965931] border border-black/10"></div>
                                     </div>
 
 
