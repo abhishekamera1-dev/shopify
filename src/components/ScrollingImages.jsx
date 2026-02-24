@@ -62,7 +62,7 @@ const ScrollingImages = () => {
                 {/* Desktop: Sticky Layout */}
                 <div className="hidden md:flex flex-row gap-0">
                     {/* Left: Sticky Image Side */}
-                    <div className="w-1/2 h-[100vh] sticky top-0 flex items-center justify-center">
+                    <div className="w-1/2 h-[80vh] sticky top-0 flex items-center justify-center">
                         <div className="relative w-full max-w-[400px] aspect-[4/5] overflow-hidden shadow-2xl">
                             {items.map((item, index) => (
                                 <img
@@ -82,7 +82,7 @@ const ScrollingImages = () => {
                             <div
                                 key={index}
                                 ref={el => itemRefs.current[index] = el}
-                                className="h-[100vh] flex flex-col items-center justify-center p-12 lg:p-24"
+                                className="h-[80vh] flex flex-col items-center justify-center p-12 lg:p-24"
                             >
                                 <div className="max-w-md w-full text-center">
                                     <p className="text-[12px] tracking-[0.2em] uppercase font-extralight text-white/70 mb-5">
