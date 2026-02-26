@@ -178,6 +178,11 @@ const Bestseller = () => {
                         ))}
                     </div>
                 </div>
+             
+
+
+
+
 
                 {/* Products */}
                 <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-4 gap-x-4 md:gap-x-8 gap-y-8 md:gap-y-12 snap-x snap-mandatory scrollbar-hide pb-4 -mx-6 px-6 md:mx-0 md:px-0">
@@ -200,27 +205,27 @@ const Bestseller = () => {
                                     alt={product.title}
                                     className="w-full object-cover transition-opacity duration-700 group-hover:opacity-0"
                                 />
-
+                                
                                 {/* Hover Image */}
                                 <img
                                     src={product.secondaryImage}
                                     alt={product.title}
                                     className="absolute inset-0 w-full object-cover transition-opacity duration-700 opacity-0 group-hover:opacity-100"
                                 />
-
+                                 
                                 {/* Quick Add Button */}
                                 <button
                                     className="absolute bottom-4 right-4 
                                     w-10 h-10 flex items-center justify-center 
                                     bg-white shadow-lg 
                                     opacity-0 translate-y-2 
-                                    group-hover:opacity-100 group-hover:translate-y-0 
-                                    transition-all duration-300"
+                                    group-hover:opacity-100 group-hover:translate-y-0
+                                    transition-all duration-100"
                                 >
                                     <svg
                                         className="w-4 h-4 
                                         transition-transform duration-300 ease-in-out
-                                        hover:rotate-45 hover:scale-110"
+                                        hover:rotate-90 hover:scale-110"
                                         fill="none"
                                         stroke="currentColor"
                                         viewBox="0 0 24 24"

@@ -17,6 +17,8 @@ const BeforeAfter = () => {
         setIsDragging(true);
         handleMove(e.clientX);
     };
+  
+//   
 
     const onTouchMove = (e) => {
         if (e.touches.length > 0) {
